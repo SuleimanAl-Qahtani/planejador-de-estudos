@@ -1,5 +1,6 @@
 package view;
 
+import dao.ErroBancoDados;
 import model.AtividadeAcademica;
 import model.Avaliacao;
 import model.CorDisciplina;
@@ -71,7 +72,7 @@ public class MenuPrincipalView {
                         executando = false;
                         break;
                 }
-            } catch (RegraNegocioException | IllegalArgumentException e) {
+            } catch (RegraNegocioException | IllegalArgumentException | ErroBancoDados e) {
                 leitor.exibirErro(e.getMessage());
                 leitor.pausar();
             }
